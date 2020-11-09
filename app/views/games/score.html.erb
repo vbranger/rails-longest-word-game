@@ -1,0 +1,12 @@
+<h1>Result</h1>
+
+<% if @result == 0  %>
+  <p>Congratulations, <strong><%= @answer.upcase %></strong> is a valid English word!</p>
+<% elsif @result == 1 %>
+  <p>Sorry but <strong><%= @answer.upcase %></strong> does not seem to be a valid English word...</p>
+<% else %>
+  <p>Sorry but <strong><%= @answer.upcase %></strong> can't be built out of #{@letters.join(', ')}</p>
+<% end %>
+
+
+<%= link_to 'New game', new_path %>
